@@ -5,6 +5,7 @@ import stylesTema from 'styles/Tema.module.scss';
 import {useNavigate} from 'react-router-dom';
 
 export default function NotFound() {
+  const navigate = useNavigate();
   return (
     <div className={classNames({
       [styles.container]: true,
@@ -12,7 +13,7 @@ export default function NotFound() {
 
     })}>
       <div className={styles.voltar}>
-        <button onClick={() => {}}>
+        <button onClick={() => navigate(-1)}>{/* Bem legal, desta maneira navegamos sobre a pilha das ultimas paginas abertas e o -1 nos leva sempre a ultima pagina acessada da pilha */}
           {'< Voltar'}
         </button>
       </div>
